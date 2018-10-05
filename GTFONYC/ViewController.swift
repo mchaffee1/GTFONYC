@@ -22,6 +22,14 @@ class ViewController: UIViewController {
     private func commonInit() {
         presenter.registerCountdownTextRecipient(self)
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
 }
 
 extension ViewController: CountdownTextRecipient {
