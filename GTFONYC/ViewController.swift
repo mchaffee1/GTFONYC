@@ -1,25 +1,32 @@
-//
-//  ViewController.swift
-//  GTFONYC
-//
-//  Created by Michael Chaffee on 10/4/18.
-//  Copyright © 2018 chaf.io. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+protocol CountdownTextRecipient: class {
+    var countdownText: String { get set }
 }
 
+class ViewController: UIViewController {
+    @IBOutlet weak var countdownLabel: UILabel?
+
+    private let presenter = Presenter()
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        commonInit()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+
+    private func commonInit() {
+        presenter.registerCountdownTextRecipient(self)
+    }
+}
+
+extension ViewController: CountdownTextRecipient {
+    var countdownText: String {
+        get { return countdownLabel?.text ?? "" }
+        set { countdownLabel?.text = newValue }
+    }
+}
