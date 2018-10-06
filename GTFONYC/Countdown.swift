@@ -28,6 +28,10 @@ class Countdown {
         }
     }
 
+    func tickNow() {
+        tick()
+    }
+
     private func tick() {
         guard let target = target else { return }
         delegate?.timeRemainingIs(-1 * Date().timeIntervalSince(target))

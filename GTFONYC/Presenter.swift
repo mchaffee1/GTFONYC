@@ -1,16 +1,16 @@
 import Foundation
 
+protocol PresenterType {
+    func registerCountdownTextRecipient(_ recipient: CountdownTextRecipient?)
+}
+
 class Presenter {
-    var countdown: Countdown?
+    private var countdown: Countdown?
     init() {
         countdown = Countdown(delegate: self)
     }
 
-    private var countdownTextRecipients: [CountdownTextRecipient?] = []
-    func registerCountdownTextRecipient(_ recipient: CountdownTextRecipient?) {
-        guard let recipient = recipient else { return }
-        countdownTextRecipients.append(recipient)
-    }
+    fileprivate var countdownTextRecipients: [CountdownTextRecipient?] = []
 
     fileprivate func reportTimeRemaining(_ seconds: TimeInterval) {
         let hoursText = seconds.hours > 0 ? "\(seconds.hours)h" : ""
@@ -21,6 +21,14 @@ class Presenter {
             .forEach { recipient in
                 recipient.countdownText = countdownText
         }
+    }
+}
+
+extension Presenter: PresenterType {
+    func registerCountdownTextRecipient(_ recipient: CountdownTextRecipient?) {
+        guard let recipient = recipient else { return }
+        countdownTextRecipients.append(recipient)
+        countdown?.tickNow()
     }
 }
 

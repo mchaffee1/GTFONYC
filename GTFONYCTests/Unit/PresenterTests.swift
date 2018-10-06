@@ -15,6 +15,14 @@ class PresenterTests: QuickSpec {
             presenter.registerCountdownTextRecipient(mockRecipient)
         }
 
+        it("immediately updates recipients upon registration") {
+            let mockRecipient = MockCountdownTextRecipient()
+            presenter = Presenter()
+            presenter.registerCountdownTextRecipient(mockRecipient)
+
+            expect(mockRecipient.countdownTextSetCount) == 1
+        }
+
         it("receives a sub-minute time interval from a Countdown and pushes a string to the viewController") {
             presenter.timeRemainingIs(56.789)
 

@@ -5,9 +5,15 @@ protocol CountdownTextRecipient: class {
 }
 
 class ViewController: UIViewController {
+    static let nibName = "Main"
+
     @IBOutlet weak var countdownLabel: UILabel?
 
-    private let presenter = Presenter()
+    var presenter: PresenterType? {
+        didSet {
+            presenter?.registerCountdownTextRecipient(self)
+        }
+    }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -20,7 +26,7 @@ class ViewController: UIViewController {
     }
 
     private func commonInit() {
-        presenter.registerCountdownTextRecipient(self)
+        Wireframe.shared.register(self)
     }
 
     override func viewDidAppear(_ animated: Bool) {

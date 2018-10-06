@@ -22,6 +22,8 @@
 		2B6AE8FC2167925700A89D8D /* MockCountdownTextRecipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6AE8FB2167925700A89D8D /* MockCountdownTextRecipient.swift */; };
 		2B9DFE3821668A8800E27DB1 /* CountdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9DFE3721668A8800E27DB1 /* CountdownTests.swift */; };
 		2B9DFE3C21668B7700E27DB1 /* MockCountdownDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9DFE3B21668B7700E27DB1 /* MockCountdownDelegate.swift */; };
+		2BD2E8B021693124005BD2EC /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD2E8AF21693124005BD2EC /* MockPresenter.swift */; };
+		2BD2E8B221693298005BD2EC /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD2E8B121693298005BD2EC /* Wireframe.swift */; };
 		62F48191F0F7468EE4AD1991 /* Pods_GTFONYCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AB0CFD56126BE77C19B600 /* Pods_GTFONYCUITests.framework */; };
 		89D7A7F699C1268A2A9735CB /* Pods_GTFONYC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E78178E152A78D888D18DB8 /* Pods_GTFONYC.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,8 @@
 		2B6AE8FB2167925700A89D8D /* MockCountdownTextRecipient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountdownTextRecipient.swift; sourceTree = "<group>"; };
 		2B9DFE3721668A8800E27DB1 /* CountdownTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTests.swift; sourceTree = "<group>"; };
 		2B9DFE3B21668B7700E27DB1 /* MockCountdownDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountdownDelegate.swift; sourceTree = "<group>"; };
+		2BD2E8AF21693124005BD2EC /* MockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
+		2BD2E8B121693298005BD2EC /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		3D571BBFB04BBAE3AD4A4F92 /* Pods-GTFONYC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GTFONYC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GTFONYC/Pods-GTFONYC.debug.xcconfig"; sourceTree = "<group>"; };
 		55AEA3338FCCF783506972BE /* Pods-GTFONYCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GTFONYCUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GTFONYCUITests/Pods-GTFONYCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E78178E152A78D888D18DB8 /* Pods_GTFONYC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GTFONYC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +138,7 @@
 				2B4D238521668169000A2ED6 /* Main.storyboard */,
 				2B6AE8F121678F0800A89D8D /* Presenter.swift */,
 				2B4D238321668169000A2ED6 /* ViewController.swift */,
+				2BD2E8B121693298005BD2EC /* Wireframe.swift */,
 			);
 			path = GTFONYC;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			children = (
 				2B9DFE3B21668B7700E27DB1 /* MockCountdownDelegate.swift */,
 				2B6AE8FB2167925700A89D8D /* MockCountdownTextRecipient.swift */,
+				2BD2E8AF21693124005BD2EC /* MockPresenter.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 			files = (
 				2B4D238421668169000A2ED6 /* ViewController.swift in Sources */,
 				2B4D238221668169000A2ED6 /* AppDelegate.swift in Sources */,
+				2BD2E8B221693298005BD2EC /* Wireframe.swift in Sources */,
 				2B6AE8F221678F0800A89D8D /* Presenter.swift in Sources */,
 				2B6AE8F521678F4F00A89D8D /* TimeInterval+Ext.swift in Sources */,
 				2B4D23B0216684BE000A2ED6 /* Countdown.swift in Sources */,
@@ -452,6 +459,7 @@
 			files = (
 				2B6AE8FC2167925700A89D8D /* MockCountdownTextRecipient.swift in Sources */,
 				2B6AE8FA2167919900A89D8D /* PresenterTests.swift in Sources */,
+				2BD2E8B021693124005BD2EC /* MockPresenter.swift in Sources */,
 				2B6AE8F021678DEB00A89D8D /* ViewControllerTests.swift in Sources */,
 				2B6AE8F821678FC300A89D8D /* TimeInterval+ExtTests.swift in Sources */,
 				2B9DFE3C21668B7700E27DB1 /* MockCountdownDelegate.swift in Sources */,
