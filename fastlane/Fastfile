@@ -16,8 +16,11 @@
 default_platform(:ios)
 
 platform :ios do
+  repo_root = "../"
+  app_name = "GTFONYC"
+
   desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  lane :synx do
+    sh "bundle exec synx #{repo_root}#{app_name}.xcodeproj/"
   end
 end
