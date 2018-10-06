@@ -14,8 +14,8 @@ class Presenter {
 
     fileprivate func reportTimeRemaining(_ seconds: TimeInterval) {
         let hoursText = seconds.hours > 0 ? "\(seconds.hours)h" : ""
-        let minutesText = seconds.minutes > 0 ? "\(seconds.minutes)m" : ""
-        let countdownText = "\(hoursText)\(minutesText)\(seconds.seconds)s"
+        let minutesText = seconds.minutesPlace > 0 ? "\(seconds.minutesPlace)m" : ""
+        let countdownText = "\(hoursText)\(minutesText)\(seconds.secondsPlace)s"
         countdownTextRecipients
             .compactMap { $0 }
             .forEach { recipient in
