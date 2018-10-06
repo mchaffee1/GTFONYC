@@ -19,7 +19,7 @@ platform :ios do
   repo_root = "../"
   app_name = "GTFONYC"
 
-  desc "Description of what the lane does"
+  desc "Sync project and directory structures"
   lane :synx do
     sh "bundle exec synx #{repo_root}#{app_name}.xcodeproj/"
   end

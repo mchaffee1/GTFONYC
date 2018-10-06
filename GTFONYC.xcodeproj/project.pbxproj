@@ -622,7 +622,7 @@
 			baseConfigurationReference = 3D571BBFB04BBAE3AD4A4F92 /* Pods-GTFONYC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = H7TG4MJ93Z;
 				INFOPLIST_FILE = GTFONYC/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -632,6 +632,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.chaf.GTFONYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development io.chaf.GTFONYC";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -642,7 +643,8 @@
 			baseConfigurationReference = B4B49FE065FBF7DC6CF81417 /* Pods-GTFONYC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = H7TG4MJ93Z;
 				INFOPLIST_FILE = GTFONYC/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -652,6 +654,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.chaf.GTFONYC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore io.chaf.GTFONYC";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
