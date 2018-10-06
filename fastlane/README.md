@@ -16,11 +16,31 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
+### ios prep
+```
+fastlane ios prep
+```
+bundle & pod install
+### ios pods
+```
+fastlane ios pods
+```
+pod install
+### ios bundle
+```
+fastlane ios bundle
+```
+bundle install
 ### ios synx
 ```
 fastlane ios synx
 ```
-Description of what the lane does
+Sync project and directory structures
+### ios build
+```
+fastlane ios build
+```
+Build, properly
 
 ----
 

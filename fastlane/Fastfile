@@ -13,14 +13,57 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+xcode_version = '10.0.0'
+
 default_platform(:ios)
 
 platform :ios do
   repo_root = "../"
   app_name = "GTFONYC"
 
+  before_all do |lane, options|
+    ENV['info_plist_path'] = 'GTFONYC/App/Info.plist'
+
+    xcversion(version: xcode_version)
+  end
+
+  desc "bundle & pod install"
+  lane :prep do
+    bundle
+    pods
+  end
+
+  desc "pod install"
+  lane :pods do
+    cocoapods(use_bundle_exec: true)
+  end
+
+  desc "bundle install"
+  lane :bundle do
+    sh "bundle install"
+  end
+
   desc "Sync project and directory structures"
   lane :synx do
     sh "bundle exec synx #{repo_root}#{app_name}.xcodeproj/"
+  end
+
+  desc "Build, properly"
+  lane :build do |options|
+    set_bundle_build_number()
+    gym
+  end
+
+  def set_bundle_build_number()
+    wip = Actions.sh("git status --porcelain").empty?
+    bundle_build_number = number_of_commits().to_s
+    bundle_build_number << (wip ? '+WIP' : '')
+    puts "setting bundle build number to #{bundle_build_number}..."
+
+    set_info_plist_value(
+      key: 'CFBundleVersion',
+      value: "#{bundle_build_number}",
+      path: ENV['info_plist_path']
+    )
   end
 end
