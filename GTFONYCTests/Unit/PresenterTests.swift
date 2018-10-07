@@ -40,5 +40,11 @@ class PresenterTests: QuickSpec {
 
             expect(mockRecipient.countdownText) == "2h26m5s"
         }
+
+        it("receives a negative value from a Countdown and pushes the 'time's up' string") {
+            presenter.timeRemainingIs(-123.45)
+
+            expect(mockRecipient.countdownText) == Presenter.TIMES_UP_TEXT
+        }
     }
 }
