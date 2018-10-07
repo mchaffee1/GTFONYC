@@ -23,8 +23,8 @@ class Countdown {
     }
 
     private func start() {
-        timer = Timer.scheduledTimer(withTimeInterval: Class.tickInterval, repeats: true) { _ in
-            self.tick()
+        timer = Timer.scheduledTimer(withTimeInterval: Class.tickInterval, repeats: true) { [weak self] _ in
+            self?.tick()
         }
     }
 
